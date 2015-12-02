@@ -85,3 +85,5 @@ POSIX字符类：
 1 [linux shell 正则表达式(BREs,EREs,PREs)差异比较](http://club.alibabatech.org/article_detail.htm?articleId=35)
 
 2 [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
+
+3 [Javascript正则表达式上-基本语法](http://www.cnblogs.com/dolphinX/p/3486214.html)
