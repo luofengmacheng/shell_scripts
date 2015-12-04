@@ -94,6 +94,14 @@ POSIX字符类：
 
 (6) U 非贪婪匹配
 
+### 5 命令对正则表达式的支持
+
+(1) grep默认支持基础正则表达式，使用`-E`选项支持扩展正则表达式。
+
+(2) sed默认支持基础正则表达式，使用`-r`选项支持扩展正则表达式。
+
+(3) awk默认支持扩展正则表达式。
+
 参考文档：
 
 1 [linux shell 正则表达式(BREs,EREs,PREs)差异比较](http://club.alibabatech.org/article_detail.htm?articleId=35)
