@@ -7,3 +7,5 @@
 3 [shell中exec与source的区别](https://github.com/luofengmacheng/shell_scripts/blob/master/execute.md)
 
 4 [双引号和单引号的区别](https://github.com/luofengmacheng/shell_scripts/blob/master/quotation.md)
+
+5 [条件测试](https://github.com/luofengmacheng/shell_scripts/blob/master/test_condition.md)
