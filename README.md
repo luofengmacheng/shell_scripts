@@ -9,3 +9,5 @@
 4 [双引号和单引号的区别](https://github.com/luofengmacheng/shell_scripts/blob/master/quotation.md)
 
 5 [条件测试](https://github.com/luofengmacheng/shell_scripts/blob/master/test_condition.md)
+
+6 [变量的若干问题](https://github.com/luofengmacheng/shell_scripts/blob/master/variable_questions.md)
