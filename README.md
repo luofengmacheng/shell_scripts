@@ -11,3 +11,5 @@
 5 [条件测试](https://github.com/luofengmacheng/shell_scripts/blob/master/test_condition.md)
 
 6 [变量的若干问题](https://github.com/luofengmacheng/shell_scripts/blob/master/variable_questions.md)
+
+7 [rsync的配置和使用](https://github.com/luofengmacheng/shell_scripts/blob/master/rsync.md)
