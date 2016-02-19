@@ -1,4 +1,4 @@
-## rsync的配置和使用
+## rsync
 
 ### 1 rsync简介
 
@@ -54,7 +54,7 @@ rsync --daemon
 
 2 创建认证文件：rsyncd.pass，文件内容为与rsync服务器同步的用户的密码，如使用test模块，则用户名为rsync，密码为pass，那么rsyncd.pass的内容就是pass。
 
-2 启动
+3 启动
 
 rsync --daemon
 
@@ -62,7 +62,7 @@ rsync --daemon
 
 常见的使用方式有两种：
 
-1 使用目录。
+#### 3.1 使用目录。
 
 ```
 rsync [option] src [user@]host:dest
@@ -71,7 +71,7 @@ rsync [option] [user@]host:src dest
 
 如上所示，在客户端，既可以从本地同步到远程，又可以从远程同步到本地。其中，user即为同步使用的用户，由于没有使用模块的方式，因此，只能使用rsyncd.conf中的全局配置，即haha用户。当然，为了使用这种认证方式，必须添加`--password-file=passwd_file`。
 
-2 使用模块
+#### 3.2 使用模块
 
 ```
 rsync [option] src [user@]host::module_name[dest]
@@ -79,3 +79,27 @@ rsync [option] [user@]host::module_name[src] dest
 ```
 
 使用模块时，就可以不用写很长的路径名，直接使用模块中配置的path路径。而且，只能使用该模块中配置的auth users进行同步。
+
+### 4 rsync的原理
+
+基于效率的原因，rsync同步时只传输有变化的部分，因此，rsync的关键算法是：当两个文件不在同一个机器上时，如何快速计算两个文件的差异？
+
+为了解决这个问题，rsync使用了两个算法：[adler32算法](https://rsync.samba.org/tech_report/node3.html)和MD5算法。
+
+在了解adler32算法之前，先来了解下rsync的工作流程(以拉取文件为例)：
+
+![](https://github.com/luofengmacheng/shell_scripts/blob/master/pics/rsync_liucheng.png)
+
+1 当在客户端发起rsync命令时，客户端的rsync进程会与服务器端的rsync进程建立连接。然后，服务器端会fork一个进程(Sender)，该进程会创建要同步的文件列表，并发送给客户端。
+
+2 客户端rsync进程在收到Sender发送来的文件列表，会fork两个进程(Generator和Receiver)，Generator会对要同步的文件分块计算adler32 checksum和MD5值。
+
+3 Generator将adler32 checksum和MD5值发送给Sender。
+
+4 Sender在收到Generator发送来的校验和与MD5值时，会与要同步的文件比对差异，生成文件的差异以及变更的内容。
+
+5 Sender将差异以及变更的内容发送给Receiver。
+
+6 Receiver在收到Sender发送来的差异和变更的内容时，会合并到要同步的文件。
+
+7 Receiver通知Generator更新文件完成。
