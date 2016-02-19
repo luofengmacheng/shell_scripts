@@ -17,7 +17,6 @@ rsync是一款远程同步的软件，它能够识别本地和远程文件的差
 2 创建rsync配置：/etc/rsyncd.conf
 
 ```
-uid = haha
 gid = users
 port = 873       # 运行端口，默认是873
 read only = true # 是否只读
@@ -61,7 +60,7 @@ rsync --daemon
 
 常见的使用方式有两种：
 
-#### 3.1 使用目录。
+#### 3.1 不使用模块
 
 ```
 rsync [option] src [user@]host:dest
@@ -113,6 +112,6 @@ rsync的工作流程(以拉取文件为例)：
 
 checksum由A和B组成，2~1KB+1的checksum可以由1~1kB字节的checksum计算而得，因此，这种checksum被称为Rolling checksum，具体算法可以查看上面的文档。
 
-4.2 rsync vs rsync over ssh
+#### 4.2 rsync vs rsync over ssh
 
-上面说到rsync的使用时，提到了两种使用方式，一种是采用目录的形式，一种是采用模块的形式。采用目录的形式时，不需要服务器以守护进程启动rsync，只需要安装有rsync即可，在这种情况下，rsync会以ssh方式连接到远程机器，然后启动rsync进程，源和目的采用管道进行通信。而采用模块的形式时，源和目的采用socket进行通信。或许是由于ssh本身的不稳定，在使用第一种方式时，对端的rsync进程有时候会拉不起来，从而导致本机的rsync会一直等待，给人的感觉就是卡死。
+上面说到rsync的使用时，提到了两种使用方式，一种是不采用模块的形式，一种是采用模块的形式。不采用模块的形式时，不需要服务器以守护进程启动rsync，只需要安装有rsync即可，在这种情况下，rsync会以ssh方式连接到远程机器，然后启动rsync进程，源和目的采用管道进行通信。而采用模块的形式时，源和目的采用socket进行通信。或许是由于ssh本身的不稳定，在使用第一种方式时，对端的rsync进程有时候会拉不起来，从而导致本机的rsync会一直等待，给人的感觉就是卡死。基于这个原因，在自动化运营中，尽量使用模块的形式。
