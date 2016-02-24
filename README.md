@@ -13,3 +13,5 @@
 6 [变量的若干问题](https://github.com/luofengmacheng/shell_scripts/blob/master/variable_questions.md)
 
 7 [rsync配置、使用和原理](https://github.com/luofengmacheng/shell_scripts/blob/master/rsync.md)
+
+8 [rsync如何工作](https://github.com/luofengmacheng/shell_scripts/blob/master/how_rsync_works.md)
