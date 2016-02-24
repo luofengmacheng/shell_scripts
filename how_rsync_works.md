@@ -51,7 +51,7 @@
 	<tr>
 		<td>generator</td>
 		<td>process</td>
-		<td>计算old文件的</td>
+		<td>计算old文件的checksum</td>
 	</tr>
 </table>
 
