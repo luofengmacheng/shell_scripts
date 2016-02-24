@@ -14,4 +14,4 @@
 
 7 [rsync配置、使用和原理](https://github.com/luofengmacheng/shell_scripts/blob/master/rsync.md)
 
-8 [rsync如何工作](https://github.com/luofengmacheng/shell_scripts/blob/master/how_rsync_works.md)
+8 [rsync如何工作(翻译)](https://github.com/luofengmacheng/shell_scripts/blob/master/how_rsync_works.md)
