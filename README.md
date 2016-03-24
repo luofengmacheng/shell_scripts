@@ -17,3 +17,5 @@
 8 [rsync如何工作(翻译)](https://github.com/luofengmacheng/shell_scripts/blob/master/how_rsync_works.md)
 
 9 [rsync的使用](https://github.com/luofengmacheng/shell_scripts/blob/master/use_of_rsync.md)
+
+9 [记一次cp软链接的坑](https://github.com/luofengmacheng/shell_scripts/blob/master/cp_symlink.md)
