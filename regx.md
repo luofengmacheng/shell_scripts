@@ -102,6 +102,20 @@ POSIX字符类：
 
 (3) awk默认支持扩展正则表达式。
 
+### 5 grep
+
+(1) -E 扩展正则表达式
+
+(2) -o 只显示精确匹配的部分，而不是整行
+
+(3) -P 支持Perl正则表达式，部分特性只有Perl正则表达式支持，例如，只有Perl正则表达式支持零宽断言
+
+(4) -v 展示不匹配的行
+
+(5) -e 指定正则表达式，可以指定多个
+
+(6) -n 展示匹配的行号
+
 参考文档：
 
 1 [linux shell 正则表达式(BREs,EREs,PREs)差异比较](http://club.alibabatech.org/article_detail.htm?articleId=35)
