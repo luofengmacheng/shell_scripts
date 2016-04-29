@@ -19,3 +19,5 @@
 9 [rsync的使用](https://github.com/luofengmacheng/shell_scripts/blob/master/use_of_rsync.md)
 
 9 [记一次cp软链接的坑](https://github.com/luofengmacheng/shell_scripts/blob/master/cp_symlink.md)
+
+10 [版本包批量部署解决方案(发布平台)](https://github.com/luofengmacheng/shell_scripts/blob/master/pkg_release.md)
