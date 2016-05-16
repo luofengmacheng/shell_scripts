@@ -20,6 +20,3 @@ UserKnownHostsFile /dev/null
 #### 1.2 免密码登录
 
 ![](https://github.com/luofengmacheng/design_pattern/blob/master/pics/ssh_learn2.png)
-
-ssh提供两个配置文件：ssh_config和sshd_config(/etc/ssh)，其中ssh_config是针对客户端的配置，sshd_config是针对服务端的配置。
-
