@@ -23,3 +23,5 @@
 10 [版本包批量部署解决方案(发布平台)](https://github.com/luofengmacheng/shell_scripts/blob/master/pkg_release.md)
 
 11 [ssh登录认证过程](https://github.com/luofengmacheng/shell_scripts/blob/master/ssh_learn.md)
+
+12 [获取本机IP](https://github.com/luofengmacheng/shell_scripts/blob/master/get_local_ip.md)
