@@ -30,6 +30,8 @@ netstat常用的选项：
 
 `ss -ntl|grep 36000|awk '{print $3}'|awk -F ':' '{print $1}'`
 
+注意：由于ss是比较新的命令，因此，它的输出可能会有变动，建议还是使用netstat获取。
+
 ### 5 小结
 
 ifconfig和netstat属于net-tools套件，而ip和ss则属于iproute2套件，现在iproute2正在主键代替net-tools，而且，当前的发行版基本都默认安装了iproute2，因此，以后还是多使用ip addr和ss。
